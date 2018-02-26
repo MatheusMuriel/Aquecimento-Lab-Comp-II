@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Principal
+comment0.text=\r\n\ Lista\ 1\ Laboratorio\ de\ Computacao\ II\r\n\r\n\ @author\ Matheus\ Muriel\r\n\ @version\ 23/02/18\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ Calcula\ o\ n-esimo\ valor\ da\ sequencia\ de\ fibonacci.\r\n\r\n\ @param\ n\ \ \ \ \ numero\ do\ elemento\ da\ sequencia.\ Obrigatoriamente\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ deve\ ser\ maior\ que\ 0.\ (n\ >\ 0)\r\n\r\n\ @return\ \ \ \ \ \ valor\ do\ n-esimo\ elemento.\r\n
+comment10.params=palavras
+comment10.target=void\ retornaPalindromos(java.lang.String[])
+comment11.params=
+comment11.target=void\ numeroPalindromo()
+comment2.params=n
+comment2.target=int\ fibonacci(int)
+comment3.params=vals
+comment3.target=int\ somatorio(int[])
+comment4.params=vals
+comment4.target=int\ segundoTerceiro(int[])
+comment5.params=str\ delim
+comment5.target=java.lang.String\ dePrimeiroDelimAoFim(java.lang.String,\ char)
+comment6.params=str\ delim
+comment6.target=java.lang.String\ deUltimoDelimAoFim(java.lang.String,\ char)
+comment7.params=str\ delim
+comment7.target=java.lang.String\ entreDelims(java.lang.String,\ char)
+comment8.params=str
+comment8.target=boolean\ isPalindromo(java.lang.String)
+comment9.params=str
+comment9.target=boolean\ isPalindromoSemEspaco(java.lang.String)
+numComments=12
