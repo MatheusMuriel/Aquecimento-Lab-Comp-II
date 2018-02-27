@@ -2,7 +2,7 @@
 /**
  * Lista 1 Laboratorio de Computacao II
  *
- * @author Matheus Muriel
+ * @author Arthur Berbert; Guilherme Rocha; Matheus Muriel
  * @version 26/02/18
  */
 public class Principal
@@ -68,54 +68,84 @@ public class Principal
         return vals[1] + vals[2];
     }
 
+    /**
+     * Manipula a String para retornar todo conteúdo após a primeira aparição de uma carácter.
+     *
+     * @param str   gera uma substring com o conteúdo da string apartir do ponto
+     *              em que aparece o char.
+     *
+     * @param delim carácter delimitador.
+     *
+     * @return      substring gerada.
+     */
     public static String dePrimeiroDelimAoFim(String str, char delim) {
-        return str.substring( str.indexOf(delim) + 1, str.length() );
+        return str.substring(str.indexOf(delim) + 1, str.length());
     }
 
+    /**
+     * Manipula a String para retornar todo o conteúdo após a ultima aparição do carácter.
+     *
+     * @param str   gera uma substring com o conteúdo da string apartir do ponto
+     *              da ultima aparição do char.
+     *
+     * @param delim carácter delimitador.
+     *
+     * @return      substring gerada.
+     */
     public static String deUltimoDelimAoFim(String str, char delim) {
-        return str.substring( str.lastIndexOf(delim) + 1, str.length() );
+        return str.substring(str.lastIndexOf(delim) + 1, str.length());
     }
 
+    /**
+     * Manipula a String para retornar todo o conteúdo entre a primeira e ultima aparição do carácter.
+     *
+     * @param str   gera uma substring com o conteúdo da string entre o primeiro
+     *              e ultimo char.
+     *
+     * @param delim carácter delimitador.
+     *
+     * @return      substring gerada.
+     */
     public static String entreDelims(String str, char delim) {
-        if(str.indexOf(delim) == str.lastIndexOf(delim)){ return str.substring(str.indexOf(delim) + 1, str.length()); }
-        else{ return str.substring(str.indexOf(delim) + 1, str.lastIndexOf(delim)); }
+        if (str.indexOf(delim) == str.lastIndexOf(delim)) {
+            return str.substring(str.indexOf(delim) + 1, str.length());
+        } else {
+            return str.substring(str.indexOf(delim) + 1, str.lastIndexOf(delim));
+        }
     }
 
-    public static boolean isPalindromo(String str){
-        StringBuffer buff = new StringBuffer(str);
-        String palavra = new String(str);
-        String reverso = new String(buff.reverse());
-        if(palavra.length() == 1){
-            try{throw new AssertionError("Um caractere é sempre palindromo."); }
-            finally{ return true; }
+    /**
+     * verifica se a palavra passada por parametros é um palindromo.
+     *
+     * @param str  String que vai receber a palavra a ser testada.
+     *              if le a palavra e comparar de tras pra frente.
+     *
+     * @return      recebe verdadeiro ao menos que as palavras sejam diferentes, se caso for diferente recebe false.
+     */
+    public static boolean isPalindromo(String str) {
+        boolean aux = true;
+        for(int i = 0; i < str.length(); i++){
+            if(str.charAt(i) != str.charAt(str.length() - i -1))
+                aux = false;
         }
-
-        if(palavra.length() == 2 && palavra.equals(reverso)){
-            try{ throw new AssertionError("Dois caracteres iguais sempre palindromo."); }
-            finally{ return true; }
-        }
-
-        if (palavra.equals(reverso)) {return true; } else{ return false; }
-
+        return aux;
     }
 
+    /**
+     * Compara se a frase é um palindromo eleminando os espaços em branco.
+     *
+     * @param str   o metodo tira os espaços entre as palavras.
+     *
+     *
+     * @return      recebe verdadeiro ao menos que as palavras sejam diferentes, se caso for diferente recebe false.
+     */
     public static boolean isPalindromoSemEspaco(String str) {
-        String strSemEspaco = str.replace(" ", "");
-        StringBuffer buff = new StringBuffer(strSemEspaco);
-        String palavra = new String(strSemEspaco);
-        String reverso = new String(buff.reverse());
-        
-        if(palavra.length() == 1){
-            try{ throw new AssertionError("Um caractere é sempre palindromo."); }
-            finally{ return true; }
-        }
+        boolean aux = true;
+        str = str.replaceAll(" ", "");
+        Principal palindromo = new Principal();
+        palindromo.isPalindromo(str);
 
-        if(palavra.length() == 2 && palavra.equals(reverso)){
-            try{ throw new AssertionError("Dois caracteres iguais sempre palindromo."); }
-            finally{ return true; }
-        }
-
-        if (palavra.equals(reverso)) { return true; } else{ return false; }
+        return palindromo.isPalindromo(str);
     }
     
     /**
