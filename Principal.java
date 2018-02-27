@@ -20,6 +20,7 @@ public class Principal
      * @return      valor do n-esimo elemento.
      */
     public static int fibonacci(int n) {
+        assert n >= 0: "Só são permitidos inteiros positivos ou nulos";
         int n1 = 1;
         int n2 = 0;
         int aux = 0;
@@ -31,6 +32,7 @@ public class Principal
         return aux;
     }
     public static int fibonacciRec(int n) {
+        assert n >= 0: "Só são permitidos inteiros positivos ou nulos";
         if ( n == 1) {return 1; }
         return fibonacciRec(n-1) + fibonacciRec(n-2);
     }
