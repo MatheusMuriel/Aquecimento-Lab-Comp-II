@@ -3,22 +3,22 @@
  * Lista 1 Laboratorio de Computacao II
  *
  * @author Matheus Muriel
- * @version 23/02/18
+ * @version 26/02/18
  */
 public class Principal
 {
+    public static void main(String[] args){
+        Principal.numeroPalindromo();
+    }
+
     /**
      * Calcula o n-esimo valor da sequencia de fibonacci.
-     *
+     * 
      * @param n     numero do elemento da sequencia. Obrigatoriamente
      *              deve ser maior que 0. (n > 0)
      *
      * @return      valor do n-esimo elemento.
      */
-    public static void main(String[] args){
-        Principal.numeroPalindromo();
-    }
-
     public static int fibonacci(int n) {
         int n1 = 1;
         int n2 = 0;
@@ -30,19 +30,31 @@ public class Principal
         }
         return aux;
     }
-
-
     public static int fibonacciRec(int n) {
         if ( n == 1) {return 1; }
         return fibonacciRec(n-1) + fibonacciRec(n-2);
     }
-
+    
+    /**
+     *  Metodo que recebe um arranjo de inteiros 
+     *  e retorna o calculo de todos os seus componentes
+     *  
+     * @param vals  Arranjo de inteiros
+     * @return soma de todos os componentes
+     */
     public static int somatorio(int[] vals) {
         int aux = 0;
         for(int i = 0; i < vals.length; i++){ aux += vals[i];}
         return aux;
     }
-
+    
+    /**
+     * Metodo que retorna o segundo e o terceiro
+     * maior componente do arranjo
+     * 
+     * @param vals  arranjo de inteiros
+     * @return
+     */
     public static int segundoTerceiro(int[] vals) {
         for(int i = 1; i < vals.length; i++) {
             for(int j = 0; j < i; j++) {
@@ -105,7 +117,13 @@ public class Principal
 
         if (palavra.equals(reverso)) { return true; } else{ return false; }
     }
-
+    
+    /**
+     * Metodo que recebe um arranjo de String e 
+     * printa na tela os componentes dele que são palindromos
+     * 
+     * @param palavras  arranjo de String contendo as palavras
+     */
     public static void retornaPalindromos(String[] palavras){
         for(int i = 0; i < palavras.length; i++){
             String temp = palavras[i];
@@ -117,6 +135,9 @@ public class Principal
         }
     }
     
+    /**
+     * Metodo que calcula todos os numeros palindromos de 0 a 10000
+     */
     public static void numeroPalindromo(){
         for(int i = 0; i <= 10000; i++){
             if(i % 2 == 0){
